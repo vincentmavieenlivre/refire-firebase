@@ -24,9 +24,5 @@
   },
   "files": [
     "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rturan29/refine-firebase.git"
-  }
+  ]
 }
