@@ -6,7 +6,7 @@ import { BaseDatabase } from "./Database";
 export class FirestoreDatabase extends BaseDatabase {
     database: Firestore;
 
-    constructor (options?: IDatabaseOptions, database?: Firestore) {
+    constructor(options?: IDatabaseOptions, database?: Firestore) {
         super(options);
         this.database = database || getFirestore(options?.firebaseApp);
 
@@ -44,6 +44,7 @@ export class FirestoreDatabase extends BaseDatabase {
     }
 
     async createData<TVariables = {}>(args: ICreateData<TVariables>): Promise<any> {
+        console.log("create data", args)
         try {
             const ref = this.getCollectionRef(args.resource);
             const payload = this.requestPayloadFactory(args.resource, args.variables);
